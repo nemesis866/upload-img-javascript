@@ -1,0 +1,27 @@
+{
+  "name": "upload-img-javascript",
+  "description": "Gestor para subir imagenes al servidor con javascript y html 5",
+  "main": "gulpfile.js",
+  "authors": [
+    "Paulo Andrade"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "img",
+    "js",
+    "javascript",
+    "html",
+    "html5",
+    "images",
+    "imagenes"
+  ],
+  "homepage": "https://github.com/nemesis866/upload-img-javascript",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./app/vendor",
+    "test",
+    "tests"
+  ]
+}
