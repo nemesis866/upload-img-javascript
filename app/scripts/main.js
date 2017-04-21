@@ -4,6 +4,8 @@ var type = ['png', 'jpg', 'jpeg'];
 // Extraemos los datos del archivo
 var data = function (file)
 {
+	'use strict';
+
 	var result = [];
 
 	// Verifiquemos que exista el archivo
@@ -27,6 +29,8 @@ var data = function (file)
 // Accion a ejecutar con la imagen seleccionada
 var selectedFile = function ()
 {
+	'use strict';
+
 	// Desactivamos el boton submit
 	document.getElementById('submit-img').disabled = true;
 	// Obtenemos el contenido del input
@@ -54,3 +58,34 @@ var selectedFile = function ()
 };
 
 // Enviar el formulario
+var formImg = document.getElementById('form-img') || 'form';
+formImg.onsubmit = function (e){
+	'use strict';
+	// Evitamos el comportamiento por defecto
+	e.preventDefault();
+
+	var url = '/img/userid';
+	// Obtenemos el contenido del formulario
+	var formData = new FormData(formImg);
+
+	// Manejadores de eventos
+	var xmlHTTP = new XMLHttpRequest();
+    xmlHTTP.upload.addEventListener('loadstart', function() {
+    	// Cuando empieza a cargar el archivo
+    }, false);
+    xmlHTTP.upload.addEventListener('progress', function() {
+    	// Mientras el archivo este cargando
+    }, false);
+    xmlHTTP.addEventListener('load', function() {
+    	// Cuando la transferencia esta completa
+    }, false);
+    xmlHTTP.addEventListener('error', function() {
+    	// Cuando la transferencia falla
+    }, false);
+    xmlHTTP.addEventListener('abort', function() {
+    	// Cuando la transferencia es cancelada
+    }, false);
+    xmlHTTP.open('POST', url, true);
+    //xmlHTTP.setRequestHeader('book_id','10');
+    xmlHTTP.send(formData);
+};
