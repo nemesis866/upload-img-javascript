@@ -1,0 +1,103 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	font-family: 'verdana', 'arial';
+	font-size: 16px;
+}
+html
+{
+	height: 101%;
+}
+
+/*****************************************
+FORMATO PARA PESTAÑAS
+*****************************************/
+
+#container {
+}
+#container h3
+{
+	padding: 10px 0;
+}
+#container input[type="radio"] {
+	height: 2.5em;
+	visibility: hidden;
+}
+#container .label {
+	background: #f9f9f9; /* Fondo de las pestañas */
+	border-radius: .25em .25em 0 0;
+	color: #888; /* Color del texto de las pestañas */
+	cursor: pointer;
+	display: block;
+	float: left;
+	font-size: 1em; /* Tamaño del texto de las pestañas */
+	height: 2.5em;
+	line-height: 2.5em;
+	margin-right: .25em;
+	padding: 0 1.5em;
+	text-align: center;
+}
+#container input:hover + label {
+	background: #ddd; /* Fondo de las pestañas al pasar el cursor por encima */
+	color: #666; /* Color del texto de las pestañas al pasar el cursor por encima */
+}
+#container input:checked + label
+{
+	background: #f1f1f1; /* Fondo de las pestañas al presionar */
+	color: #444; /* Color de las pestañas al presionar */
+	position: relative;
+	z-index: 6;
+}
+#content
+{
+	background: #f1f1f1; /* Fondo del contenido */
+	border-radius: 0 .25em .25em .25em;
+	min-height: 25em; /* Alto del contenido */
+	position: relative;
+	width: 100%;
+	z-index: 5;
+}
+#content div
+{
+	opacity: 0;
+	padding: 1.5em;
+	position: absolute;
+	z-index: -100;
+}
+#container input#tab-1:checked ~ #content #content-1,
+#container input#tab-2:checked ~ #content #content-2
+{
+	opacity: 1;
+	z-index: 100;
+}
+
+/*****************************************
+FORMATO PARA FORMULARIO
+*****************************************/
+
+#content fieldset
+{
+	border: none;
+	padding: 10px 0;
+}
+#content input[type="submit"]
+{
+	border: none;
+	border-bottom: 3px solid #1A55C4;
+	color: #FCFCFC;
+	padding: 5px 10px;
+	background-color: #3C77E6;
+}
+#content input[type="submit"]:hover
+{
+	cursor: pointer;
+	opacity: 0.7;
+}
+#content input[type="submit"]:disabled
+{
+	opacity: 0.7;
+}

@@ -11,6 +11,42 @@
 	<!-- endinject -->
 </head>
 <body>
+	<div id="container">
+		<h3>Imagenes</h3>
+		
+		<!--Pestañas-->
+  		<input id="tab-1" type="radio" name="tab-group" checked="checked" />
+  		<label class="label" for="tab-1">Subir imagen</label>
+  		<input id="tab-2" type="radio" name="tab-group" />
+  		<label class="label" for="tab-2">Seleccionar imagen</label>
+  		
+  		<!--Contenido a mostrar/ocultar-->
+  		<div id="content">
+   			<!--Contenido de la Pestaña 1-->
+   			<div id="content-1">
+   				<div id="img-preview"></div>
+				<form id="form-img" enctype="multipart/form-data">
+					<input type="hidden" id="id" name="id" value="0123456789">
+					<fieldset>
+						<label>Seleccione la imagen a subir: (Tamaño maximo 10 Kb)</label><br>
+							<input type="file" id="img" name="file" onchange="selectedFile();" required>
+					</fieldset>
+					<fieldset>
+						<input type="submit" id="submit-img" class="submit" value="Guardar imagen">
+					</fieldset>
+					<div class="cargando cargando_avatar"></div>
+				</form>
+   			</div>
+   			<div id="content-2">
+   			</div>
+   		</div>
+   	</div>
+
+	<div id="show_avatar">
+		<img src="/avatar/<?php echo $_SESSION['avatar']; ?>" id="avatar_img" alt="Avatar" title="Avatar">
+		<p><span id="avatar_msg">Imagen actualctual</span></p>
+	</div>
+
 	<!-- bower:js -->
 	<!-- endbower -->
 	<!-- inject:js -->
